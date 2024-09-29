@@ -1,0 +1,13 @@
+1727533741026	geckodriver	INFO	Listening on 127.0.0.1:58105
+1727533744077	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58106" "--remote ... localhost" "-no-remote" "-profile" "c:\\Users\\dell\\AppData\\Local\\robocorp\\temp\\128c08e50e2e3036\\rust_mozprofileFEAywR"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1727533745189	Marionette	INFO	Marionette enabled
+1727533745501	Marionette	INFO	Listening on port 58167
+WebDriver BiDi listening on ws://127.0.0.1:58106
+Read port: 58167
+1727533745884	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://www.themoviedb.org/movie/1079091-it-ends-with-us" ({})
+1727534126112	Marionette	INFO	Stopped listening on port 58167
+Dynamically enable window occlusion 1

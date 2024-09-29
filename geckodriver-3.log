@@ -1,0 +1,20 @@
+1727445111605	geckodriver	INFO	Listening on 127.0.0.1:53156
+1727445114642	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53157" "--remote ... localhost" "-no-remote" "-profile" "c:\\Users\\dell\\AppData\\Local\\robocorp\\temp\\51e97d62a3e8068d\\rust_mozprofilebNfSzf"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1727445115884	Marionette	INFO	Marionette enabled
+1727445116079	Marionette	INFO	Listening on port 53241
+WebDriver BiDi listening on ws://127.0.0.1:53157
+Read port: 53241
+1727445116481	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1727445168421	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:467:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:220:33
+1727445517856	Marionette	INFO	Stopped listening on port 53241
+JavaScript warning: https://www.themoviedb.org/movie/228970-wild, line 1834: Script terminated by timeout at:
+@https://www.themoviedb.org/movie/228970-wild:1834:15
+
+Dynamically enable window occlusion 1

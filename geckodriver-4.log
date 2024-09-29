@@ -1,0 +1,27 @@
+1727445677995	geckodriver	INFO	Listening on 127.0.0.1:59924
+1727445681040	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59925" "--remote ... localhost" "-no-remote" "-profile" "c:\\Users\\dell\\AppData\\Local\\robocorp\\temp\\8dd364be7c8fa68a\\rust_mozprofileG0qEOW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1727445682514	Marionette	INFO	Marionette enabled
+1727445682785	Marionette	INFO	Listening on port 59991
+WebDriver BiDi listening on ws://127.0.0.1:59925
+Read port: 59991
+1727445683225	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c, line 186: Script terminated by timeout at:
+Qa@https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c:186:70
+tm@https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c:376:440
+sm.prototype.flush@https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c:380:337
+sm.prototype.push@https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c:378:403
+lm@https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c:375:785
+yH/<@https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c:706:187
+h.Ok/<@https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c:649:126
+h.Ok/c/<@https://www.googletagmanager.com/gtag/js?id=G-4257LNMWD9&l=dataLayer&cx=c:648:418
+
+1727445713341	Marionette	INFO	Stopped listening on port 59991
+Dynamically enable window occlusion 1
+JavaScript error: resource://gre/modules/UpdateService.sys.mjs, line 5356: 
+1727445713474	addons.xpi	ERROR	System addon update list error [Exception... "<no message>"  nsresult: "0x8046001e (<unknown>)"  location: "JS frame :: resource://gre/modules/ServiceRequest.sys.mjs :: open :: line 133"  data: no]
+console.error: (new Error("Polling for changes failed: .", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: Region.sys.mjs: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.sys.mjs: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.sys.mjs", 411))
