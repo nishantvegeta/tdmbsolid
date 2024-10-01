@@ -6,7 +6,7 @@ class Bot():
     
     def start(self):
         self.sp.before_run()
-        self.sp.run()
+        # self.sp.run()
         # self.sp.after_run()
 
     def teardown(self):

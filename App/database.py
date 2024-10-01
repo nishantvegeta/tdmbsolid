@@ -1,18 +1,27 @@
 import psycopg2
 
 class Database:
-    def connect_postgresql(self):
+    def __init__(self):
         self.connection = None
         self.cursor = None
+        self.connect_postgresql()
+
+    def connect_postgresql(self):
+        self.connect()
 
     def connect(self):
         """Establish a connection to the PostgreSQL database."""
+        db_host = 'localhost'
+        db_name = 'movie'
+        db_user = 'postgres'
+        db_password = 'postgres'
+
         try:
             self.connection = psycopg2.connect(
-                host='localhost',
-                database='movie',
-                user='postgres',
-                password='postgres'
+                host=db_host,
+                database=db_name,
+                user=db_user,
+                password=db_password
             )
             self.cursor = self.connection.cursor()
             self.create_table()
@@ -22,31 +31,28 @@ class Database:
 
     def create_table(self):
         """Create the movies table if it doesn't exist."""
-        try:
-            if self.connection:
-                self.cursor.execute(
-                    """
-                    CREATE TABLE IF NOT EXISTS movies (
-                        id SERIAL PRIMARY KEY,
-                        movie_name VARCHAR(255) NOT NULL,
-                        user_score VARCHAR(10),
-                        storyline TEXT,
-                        genres TEXT,
-                        review_1 TEXT,
-                        review_2 TEXT,
-                        review_3 TEXT,
-                        review_4 TEXT,
-                        review_5 TEXT,
-                        status VARCHAR(50) NOT NULL
-                    )
-                    """
+        if self.connection:
+            self.cursor.execute(
+                """
+                CREATE TABLE IF NOT EXISTS movies (
+                    id SERIAL PRIMARY KEY,
+                    movie_name VARCHAR(255) NOT NULL,
+                    user_score VARCHAR(10),
+                    storyline TEXT,
+                    genres TEXT,
+                    review_1 TEXT,
+                    review_2 TEXT,
+                    review_3 TEXT,
+                    review_4 TEXT,
+                    review_5 TEXT,
+                    status VARCHAR(50)
                 )
-                self.connection.commit()
-            else:
-                print("No connection available to create the table.")
-        except:
-            print("Error while creating the table.")
-            self.connection.rollback()
+                """
+            )
+            self.connection.commit()
+        else:
+            print("No connection available to create the table.")
+
 
     def insert_movie_data(self, movie_name, user_score, storyline, genres, reviews, status="success"):
         """Insert the extracted movie data into the PostgreSQL database."""
@@ -73,15 +79,14 @@ class Database:
         )
 
         try:
+            self.cursor = self.connection.cursor()  # Ensure cursor is available for insertion
             self.cursor.execute(sql_query, parameters)
             self.connection.commit()
-            print(f"{movie_name} inserted successfulyy into database with status: {status}.")
+            print(f"{movie_name} inserted successfully into the database with status: {status}.")
         except Exception as e:
-            print(f"Error while inserting {movie_name} into database: {e}")
-            
+            print(f"Error while inserting {movie_name} into the database: {e}")
 
     def close(self):
         """Close the database connection."""
         if self.connection:
-            self.cursor.close()
             self.connection.close()

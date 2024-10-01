@@ -1,14 +1,16 @@
 from RPA.Browser.Selenium import Selenium
 import time
-from .db import Database
+from App.database import Database
+ 
 
 class Browser:
     def __init__(self):
         self.browser = Selenium()
+        self.database = Database()
 
     def open_tmdb(self):
         self.tmdb_url = 'https://www.themoviedb.org/search/movie?query='
-        self.browser.open_browser(self.tmdb_url, browser="chrome")
+        self.browser.open_browser(self.tmdb_url, browser="firefox")
         self.browser.maximize_browser_window()
 
     def search_movie(self, movie_name):
@@ -62,7 +64,7 @@ class Browser:
 
         if not movie_data:
             print(f"No matching movies found for {movie_name}\n")
-            self.insert_movie_data(movie_name, None, None, None, [], status="Not Found")
+            self.database.insert_movie_data(movie_name, None, None, None, [], status="Not Found")
             return
 
         # Find the movie with the latest year among the exact matches
@@ -134,7 +136,7 @@ class Browser:
             reviews_xpath = '//section[@class="panel review"]//div[@class="review_container"]//div[@class="content"]//p'
             reviews = self.extract_reviews(reviews_xpath)
 
-            self.insert_movie_data(movie_name, user_score, storyline, genres, reviews)
+            self.database.insert_movie_data(movie_name, user_score, storyline, genres, reviews)
         
         except Exception as e:
             print(f"Error while extracting details for '{movie_name}': {e}")
@@ -156,7 +158,7 @@ class Browser:
 
     def extract_reviews(self,reviews_xpath):
         try:
-            self.scroll_to_load_movies()
+            # self.scroll_to_load_movies()
             reviews_elements = self.browser.get_webelements(reviews_xpath)
 
             top_reviews = [review.text.strip() for review in reviews_elements[:5]]
@@ -173,3 +175,11 @@ class Browser:
 
     def close(self):
         self.browser.close_browser()
+
+# if __name__ == "__main__":
+#     browser = Browser()
+#     try:
+#         # Call your methods here
+#         browser.open_tmdb()
+#     finally:
+#         browser.close()

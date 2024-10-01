@@ -277,7 +277,7 @@ class TmdbScrapper:
             self.connection.close()
         self.browser.close_browser()
 
-@task
+
 def scrape_movies():
     movie_names = movies_name_from_excel()
 

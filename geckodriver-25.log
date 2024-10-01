@@ -1,0 +1,13 @@
+1727754832777	geckodriver	INFO	Listening on 127.0.0.1:63032
+1727754835824	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63033" "--remote ... localhost" "-no-remote" "-profile" "C:\\Users\\dell\\AppData\\Local\\robocorp\\temp\\336c53509173f6aa\\rust_mozprofileVlwxkK"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1727754837037	Marionette	INFO	Marionette enabled
+1727754837333	Marionette	INFO	Listening on port 63320
+WebDriver BiDi listening on ws://127.0.0.1:63033
+Read port: 63320
+1727754837703	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.themoviedb.org/assets/2/kendo-93daa31ab3dcca8723478255a3b3c3f0a9e6672dddc612e114391786423c1870.js, line 52: TypeError: e is undefined
+1727754929989	Marionette	INFO	Stopped listening on port 63320
+Dynamically enable window occlusion 1

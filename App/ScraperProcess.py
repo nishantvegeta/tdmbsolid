@@ -1,31 +1,32 @@
-from App.db import Database
+from App.database import Database
 from App.excel import Excel
 from App.browser import Browser
 
 class ScraperProcess:
     def __init__(self):
-        self.db = Database()  # Initialize Database
+        self.database = Database()  # Initialize Database
         self.excel = Excel()  # Initialize Excel
         self.browser = Browser()  # Initialize Browser
         self.movies = []
 
     def before_run(self):
         self.movies = self.excel.read_movies_from_excel()
-        self.db.connect()
-        self.db.create_table()
+        self.database.connect()
+        self.database.create_table()
         self.browser.open_tmdb()
         
         print("Setup completed")
 
-    def run(self):
-        self.before_run()
+    # def run(self):
+        
+    #     self.before_run()
         for movie in self.movies:
             self.run_item(movie)
-            
-        self.after_run()
+
+        # self.after_run()
 
     def after_run(self):
-        self.db.close()
+        self.database.close()
         self.browser.close()
         self.excel.close_excel()
         print("Process completed")
@@ -60,7 +61,7 @@ class ScraperProcess:
                 "Success"
             )
 
-            self.db.insert_movie_data(*movie_data)
+            self.database.insert_movie_data(*movie_data)
 
         except Exception as e:
             print(f"Error processing movie {movie}: {e}")

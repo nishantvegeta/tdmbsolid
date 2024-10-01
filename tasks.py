@@ -1,4 +1,4 @@
-from bot import Bot
+from App.bot import Bot
 from robocorp.tasks import task, teardown
 
 bot = Bot()
@@ -12,8 +12,8 @@ def start_bot():
         raise
 
 @teardown
-def cleanup():
+def cleanup(self):
     bot.teardown()
 
-if __name__ == "__main__":
-    start_bot()
+# if __name__ == "__main__":
+#     start_bot()
